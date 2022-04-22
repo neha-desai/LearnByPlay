@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--CSS LINK FOR TEXT ANIMATION-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!--LINK FOR CUSTOM CSS-->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!--GOOGLE FONTS LINK-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--AOS LINK-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!--BOOTSTRAP LINKS-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/6bc9dbf18a.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--SWEETALERT-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>Software Engineering</title>
+  </head>
+  <body style="background-color: #89d1fe">
+    <div
+      style="font-size: 32px; font-weight: 800; margin-left: 10px; color: white"
+    >
+      Software Design
+    </div>
+
+    <div class="container" style="margin-top: 150px">
+      <!--SCORE DIV-->
+      <div
+        class="score"
+        style="
+          display: block;
+          text-align: right;
+          margin-right: 90px;
+          font-size: 19px;
+          letter-spacing: 5px;
+        "
+      >
+        <span style="color: green"
+          ><i class="fas fa-check"></i><span id="rightScore"></span
+        ></span>
+        <span style="color: red"
+          ><i class="fas fa-times"></i><span id="wrongScore"></span
+        ></span>
+      </div>
+
+      <!--QUESTIONS-->
+      <div class="tab">
+        <button
+          class="tablinks"
+          onclick="openCity(event, 'London')"
+          id="defaultOpen"
+        >
+          Q.No. 1
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">
+          Q.No. 2
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">
+          Q.No. 3
+        </button>
+      </div>
+
+      <!--QUESTION NO.1-->
+      <div id="London" class="tabcontent">
+        Consider the given senario: Jack develops a system where he hides how
+        the printing process takes place and includes a button which on pressing
+        prints the document. So the above process of hiding the complex part is
+        called?
+        <div class="answers">
+          <div
+            class="answer"
+            id="one"
+            onclick="incrementWrong(); sweetalertWrong(this,'Correct answer is, Abstraction. It is a process of hiding all the complex structure. Do revise the concept again!')"
+          >
+            <img src="/assets/module.png" />
+            <span style="margin-top: 10px; color: rgb(87, 87, 87)"
+              >Modularity</span
+            >
+          </div>
+          <div
+            class="answer"
+            id="two"
+            onclick="incrementWrong(); sweetalertWrong(this,'Correct answer is, Abstraction. It is a process of hiding all the complex structure. Do revise the concept again!')"
+          >
+            <img src="/assets/code.png" />
+            <span style="margin-top: 10px; color: rgb(87, 87, 87)"
+              >Refactoring</span
+            >
+          </div>
+          <div
+            class="answer"
+            id="three"
+            onclick="incrementRight(); sweetalertCorrect(this,'Abstraction is a process of hiding all the complex structure.')"
+          >
+            <img src="/assets/file.png" />
+            <span style="margin-top: 10px; color: rgb(87, 87, 87)"
+              >Data Abstraction</span
+            >
+          </div>
+          <div
+            class="answer"
+            id="four"
+            onclick="incrementWrong(); sweetalertWrong(this,'Correct answer is, Abstraction. It is a process of hiding all the complex structure. Do revise the concept again!')"
+          >
+            <img src="/assets/sketch.png" />
+            <span style="margin-top: 10px; color: rgb(87, 87, 87)"
+              >Architectural Design</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!--QUESTION NO.2-->
+      <div id="Paris" class="tabcontent">
+        A computer is built up by joining multiple different parts, the
+        subdivision of a bigger system into smaller parts is called?
+        <div class="answers">
+          <div
+            class="answer"
+            id="one"
+            onclick="incrementRight(); sweetalertCorrect(this,'Modularity is to divide the system or projects into smaller parts.')"
+          >
+            <img src="/assets/module.png" />
+            <span style="margin-top: 10px; color: rgb(87, 87, 87)"
+              >Modularity</span
+            >
+          </div>
+          <div
+            class="answer"
+            id="two"
+            onclick="incrementWrong(); sweetalertWrong(this,'Correct answer is, Modularity. It is a process of dividing the system or projects into smaller parts.. Do revise the concept again!')"
+          >
+            <img src="/assets/code.png" />
+            <span style="margin-top: 10px; color: rgb(87, 87, 87)"
+              >Refactoring</span
+            >
+          </div>
+          <div
+            class="answer"
+            id="three"
+            onclick="incrementWrong(); sweetalertWrong(this,'Correct answer is, Modularity. It is a process of dividing the system or projects into smaller parts.. Do revise the concept again!')"
+          >
+            <img src="/assets/file.png" />
+            <span style="margin-top: 10px; color: rgb(87, 87, 87)"
+              >Data Abstraction</span
+            >
+          </div>
+          <div
+            class="answer"
+            id="four"
+            onclick="incrementWrong(); sweetalertWrong(this,'Correct answer is, Modularity. It is a process of dividing the system or projects into smaller parts.. Do revise the concept again!')"
+          >
+            <img src="/assets/sketch.png" />
+            <span style="margin-top: 10px; color: rgb(87, 87, 87)"
+              >Architectural Design</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!--QUESTION NO.3-->
+      <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+    </div>
+
+    <script>
+      AOS.init();
+
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+
+      //SWEET ALERT FOR WRONG ANS
+      function sweetalertWrong(ele, dialogueText) {
+        ele.style.border = "3.5px solid #f26868";
+        swal({
+          title: "Oops! Thats worng",
+          text: dialogueText,
+          icon: "error",
+        });
+      }
+      //SWEET ALERT FOR RIGHT ANS
+      function sweetalertCorrect(ele, dialogueText) {
+        ele.style.border = "3.5px solid #63C642";
+        swal({
+          title: "Thats Correct",
+          text: dialogueText,
+          icon: "success",
+        });
+      }
+
+      var wronganswer = 0;
+      var rightanswer = 0;
+      document.getElementById("wrongScore").innerHTML = wronganswer;
+      document.getElementById("rightScore").innerHTML = rightanswer;
+
+      function incrementWrong() {
+        wronganswer++;
+        document.getElementById("wrongScore").innerHTML = wronganswer;
+      }
+
+      function incrementRight() {
+        rightanswer++;
+        document.getElementById("rightScore").innerHTML = rightanswer;
+      }
+    </script>
+  </body>
+</html>
